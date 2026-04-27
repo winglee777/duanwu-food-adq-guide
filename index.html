@@ -31,8 +31,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei
 .sb-b{background:var(--pri)}
 .sb-g{background:var(--ok)}
 
-/* ==================== ① 选品横条 ==================== */
-.pick-row{display:flex;gap:0;border-bottom:1.5px solid var(--bd)}
+/* ==================== ① 选品：align-items:start 不等高 ==================== */
+.pick-row{display:flex;gap:0;border-bottom:1.5px solid var(--bd);align-items:flex-start}
 .pick-col{flex:1;padding:10px 12px;border-right:1px solid var(--bd)}
 .pick-col:last-child{border-right:none}
 .pk-title{font-size:12px;font-weight:800;padding:4px 7px;border-radius:4px;margin-bottom:5px;display:flex;align-items:center;gap:4px}
@@ -49,9 +49,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei
 .pk-tips{padding-left:10px}
 .pk-tips li{font-size:9px;color:var(--t2);line-height:1.5;margin-bottom:1px}
 
-/* ==================== ② 跑量内容：3个类型框横排，每框内2个竖版视频 ==================== */
-.vid-row{display:flex;gap:10px;padding:12px 14px}
-.type-box{flex:1;background:#FAFBFC;border-radius:7px;border:1px solid var(--bd);overflow:hidden;display:flex;flex-direction:column}
+/* ==================== ② 跑量内容：横排视频卡片 ==================== */
+.vid-row{display:flex;gap:8px;padding:10px 14px;align-items:flex-start}
+.type-box{flex:2;background:#FAFBFC;border-radius:7px;border:1px solid var(--bd);overflow:hidden}
+.type-box.narrow{flex:1}
 .type-hd{display:flex;align-items:center;gap:4px;padding:5px 8px;border-bottom:1px solid var(--bd)}
 .type-hd.th-red{background:var(--acc-bg)}
 .type-hd.th-blue{background:var(--pri-bg)}
@@ -61,47 +62,48 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei
 .type-num.tn-blue{background:var(--pri)}
 .type-num.tn-green{background:var(--ok)}
 .type-title{font-size:11px;font-weight:800}
-.type-body{padding:6px;flex:1}
+.type-body{padding:6px}
 
-/* 视频并排容器 */
-.vids{display:flex;gap:6px;margin-bottom:4px}
-.vids video{flex:1;min-width:0;max-width:50%;aspect-ratio:9/16;border-radius:4px;object-fit:cover;background:#000}
+/* 视频并排：弹性宽度，充分利用空间 */
+.vids{display:flex;gap:5px;margin-bottom:4px}
+.vids video{flex:1;min-width:0;aspect-ratio:9/16;border-radius:4px;object-fit:cover;background:#000}
 
 /* 类型解读 */
-.type-meta{font-size:8px;color:var(--t2);line-height:1.4;margin-top:4px}
+.type-meta{font-size:8px;color:var(--t2);line-height:1.4;margin-top:3px}
 .type-meta b{color:var(--t1)}
-.type-metrics{display:flex;gap:2px;margin-top:4px;padding-top:3px;border-top:1px dashed var(--bd)}
+.type-metrics{display:flex;gap:2px;margin-top:3px;padding-top:3px;border-top:1px dashed var(--bd)}
 .tm{text-align:center;flex:1;padding:1px 0;background:#fff;border-radius:2px;border:1px solid var(--bd)}
 .tm .v{font-size:9px;font-weight:800;color:var(--pri)}
 .tm .l{font-size:6px;color:var(--t3)}
 
-/* ==================== 洞察条：横排三列 ==================== */
-.ins{background:var(--gold-bg);border-top:1.5px solid var(--gold);padding:8px 18px;display:flex;gap:14px;align-items:flex-start}
-.ins-item{flex:1;font-size:9px;color:#78350F;line-height:1.5}
+/* ==================== 洞察条 ==================== */
+.ins{background:var(--gold-bg);border-top:1.5px solid var(--gold);padding:6px 18px;display:flex;gap:14px;align-items:flex-start}
+.ins-item{flex:1;font-size:9px;color:#78350F;line-height:1.4}
 .ins-item b{color:#92400E;font-size:9px}
-.ins-item .ins-title{font-size:10px;font-weight:800;color:#92400E;margin-bottom:2px}
-.ins-highlight{background:#fff;border:1.5px solid var(--acc);border-radius:5px;padding:5px 10px;flex:1.2}
+.ins-item .ins-title{font-size:10px;font-weight:800;color:#92400E;margin-bottom:1px}
+.ins-highlight{background:#fff;border:1.5px solid var(--acc);border-radius:5px;padding:4px 8px;flex:1.2}
 .ins-highlight .ins-title{color:var(--acc)}
 .ins-highlight b{color:var(--acc)}
 
 /* ==================== ③ 投放作战 ==================== */
-.bot{padding:12px 16px}
-.tl{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px}
-.tc{border-radius:5px;padding:8px 10px;border:1.5px solid var(--bd);position:relative}
+.bot{padding:10px 14px}
+/* 时间线三列 */
+.tl{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:8px}
+.tc{border-radius:5px;padding:6px 8px;border:1.5px solid var(--bd);position:relative}
 .tc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:5px 5px 0 0}
 .tc-g::before{background:var(--gold)}
 .tc-r::before{background:var(--acc)}
 .tc-b::before{background:var(--pri)}
-.tc .tp{font-size:8px;font-weight:700;padding:1px 6px;border-radius:2px;display:inline-block;margin-bottom:2px}
+.tc .tp{font-size:8px;font-weight:700;padding:1px 6px;border-radius:2px;display:inline-block;margin-bottom:1px}
 .tc-g .tp{background:var(--gold-bg);color:#92400E}
 .tc-r .tp{background:var(--acc-bg);color:var(--acc)}
 .tc-b .tp{background:var(--pri-bg);color:var(--pri)}
 .tc .td{font-size:11px;font-weight:700;margin-bottom:1px}
-.tc .tt{font-size:9px;color:var(--t2);line-height:1.45}
+.tc .tt{font-size:9px;color:var(--t2);line-height:1.4}
 
-/* 策略：左窄(38%)右宽(62%) + align-items:start */
-.sr{display:grid;grid-template-columns:38fr 62fr;gap:10px;align-items:start}
-.sc2{border-radius:6px;overflow:hidden;border:1.5px solid var(--bd)}
+/* 策略：通栏流式，ADQ 和 送礼物 上下排列，不做左右分列 */
+.strat-wrap{display:flex;gap:8px;align-items:flex-start}
+.sc2{border-radius:6px;overflow:hidden;border:1.5px solid var(--bd);flex:1}
 .sc-h{padding:5px 8px;display:flex;align-items:center;gap:4px}
 .sc-h.hb{background:var(--pri-bg)}
 .sc-h.hg{background:var(--ok-bg)}
@@ -111,22 +113,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei
 .sc-tt{font-size:11px;font-weight:800}
 .sc-tt-b{color:var(--pri)}
 .sc-tt-g{color:var(--ok)}
-.sc-bd{padding:7px 9px;background:#fff}
+.sc-bd{padding:6px 9px;background:#fff}
 .sc-bd li{font-size:9px;color:var(--t2);line-height:1.5;margin-bottom:1px}
 .sc-bd ul{padding-left:11px;margin-top:1px}
 .sc-bd .hl{font-weight:700;color:var(--pri)}
-.ab{background:var(--pri-bg);border-radius:4px;padding:5px 7px;margin-top:5px}
+.ab{background:var(--pri-bg);border-radius:4px;padding:4px 7px;margin-top:4px}
 .ab h5{font-size:9px;font-weight:700;color:var(--pri);margin-bottom:1px}
 .ab li{font-size:8px}
 
-/* 右侧送礼物：文字+截图横排 */
-.gift-layout{display:flex;gap:8px;align-items:flex-start;margin-top:6px}
-.gift-text{flex:0 0 auto;min-width:0}
-.gift-text li{font-size:9px;color:var(--t2);line-height:1.5}
-.gift-text ul{padding-left:11px}
-.gift-pic{flex:1;min-width:0}
-.gift-pic img{width:100%;border-radius:4px;border:1px solid var(--bd)}
-.gi-l{font-size:8px;color:var(--t3);margin-bottom:2px;font-weight:600}
+/* 送礼物内容区：上方文字 + 下方截图（截图控制高度） */
+.gift-note{font-size:8px;color:var(--t3);margin-top:4px;font-weight:600}
+.gift-imgs{display:flex;gap:6px;margin-top:4px}
+.gift-imgs img{flex:1;min-width:0;border-radius:4px;border:1px solid var(--bd);max-height:140px;object-fit:contain}
 
 .ft{background:var(--pri);color:rgba(255,255,255,.75);padding:8px 24px;font-size:9px;display:flex;justify-content:space-between}
 </style>
@@ -172,8 +170,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei
     <div class="pk-title pk-tip">💡 选品建议</div>
     <ul class="pk-tips">
       <li>咸口粽是绝对主力，<b>重仓蛋黄肉粽</b></li>
-      <li>甜口粽做<b>差异化补充</b>，榴莲冰粽等新品类天然吸睛</li>
-      <li>"买4送4""到手8只"等<b>大促货组</b>转化率显著更高</li>
+      <li>甜口粽做<b>差异化补充</b>，榴莲冰粽等新品吸睛</li>
+      <li>"买4送4""到手8只"等<b>大促货组</b>转化率更高</li>
     </ul>
   </div>
 </div>
@@ -229,7 +227,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei
   </div>
 
   <!-- 类型3：口碑溯源（1个视频） -->
-  <div class="type-box">
+  <div class="type-box narrow">
     <div class="type-hd th-green">
       <div class="type-num tn-green">3</div>
       <div class="type-title">口碑溯源 · 建信任</div>
@@ -252,11 +250,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei
 
 </div>
 
-<!-- 洞察条：横排三列 -->
+<!-- 洞察条 -->
 <div class="ins">
   <div class="ins-item">
     <div class="ins-title">🔥 食欲特写是王道</div>
-    掰开粽子露馅料的特写画面，转化率 <b>10%+</b>，三种类型中转化最高
+    掰粽子露馅料特写，转化率 <b>10%+</b>，三种类型中最高
   </div>
   <div class="ins-item">
     <div class="ins-title">🏅 匠人故事加持ROI</div>
@@ -264,7 +262,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei
   </div>
   <div class="ins-highlight">
     <div class="ins-title">⚠️ 关键：模特必须用中老年人</div>
-    粽子品类核心受众是 <b>40-65岁中老年</b>，视频号用户画像高度匹配。模特用老人 → 亲切感+信任感 → 转化率显著优于年轻模特
+    核心受众 <b>40-65岁中老年</b>，模特用老人 → 亲切感+信任感 → 转化率显著优于年轻模特
   </div>
 </div>
 
@@ -277,8 +275,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei
     <div class="tc tc-b"><span class="tp">📊 长尾收割</span><div class="td">端午后一周</div><div class="tt">节后仍有回购需求<br>已验证素材持续投放<br>收割长尾流量</div></div>
   </div>
 
-  <!-- 策略：左窄38% 右宽62% -->
-  <div class="sr">
+  <!-- 策略：左右并排，align-items:start 不等高 -->
+  <div class="strat-wrap">
     <!-- 左：ADQ放量 -->
     <div class="sc2">
       <div class="sc-h hb"><span class="sc-bg sc-bg-b">放量</span><span class="sc-tt sc-tt-b">ADQ多链路规模投放</span></div>
@@ -305,8 +303,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei
           <li>小店直购链路 — 朋友圈增加<b>文字链</b></li>
           <li>文案选择：送朋友 / 送妈妈 / 送长辈 / 送给ta / 惊喜直达</li>
         </ul>
-        <div class="gi-l">📋 配置入口：广告创编 → 文字链 → 新建文字链</div>
-        <img src="粽子素材/送礼物icon.png" alt="送礼物文字链配置" style="width:100%;border-radius:4px;border:1px solid var(--bd)">
+        <div class="gift-note">📋 配置入口：广告创编 → 文字链 → 新建文字链</div>
+        <div class="gift-imgs">
+          <img src="粽子素材/送礼物icon.png" alt="送礼物文字链配置">
+        </div>
       </div>
     </div>
   </div>
