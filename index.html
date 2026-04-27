@@ -121,10 +121,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei
 .ab h5{font-size:9px;font-weight:700;color:var(--pri);margin-bottom:1px}
 .ab li{font-size:8px}
 
-/* 送礼物内容区：上方文字 + 下方截图（截图控制高度） */
+/* 送礼物内容区：左文右图横向并排 */
+.gift-layout{display:flex;gap:8px;align-items:flex-start}
+.gift-text{flex:1;min-width:0}
+.gift-text ul{padding-left:11px;margin-top:1px}
+.gift-text li{font-size:9px;color:var(--t2);line-height:1.5;margin-bottom:1px}
 .gift-note{font-size:8px;color:var(--t3);margin-top:4px;font-weight:600}
-.gift-imgs{display:flex;gap:6px;margin-top:4px}
-.gift-imgs img{flex:1;min-width:0;border-radius:4px;border:1px solid var(--bd);max-height:140px;object-fit:contain}
+.gift-img{flex:0 0 130px}
+.gift-img img{width:100%;border-radius:4px;border:1px solid var(--bd);object-fit:contain}
 
 .ft{background:var(--pri);color:rgba(255,255,255,.75);padding:8px 24px;font-size:9px;display:flex;justify-content:space-between}
 </style>
@@ -298,14 +302,18 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei
     <div class="sc2">
       <div class="sc-h hg"><span class="sc-bg sc-bg-g">增量</span><span class="sc-tt sc-tt-g">借势【送礼物】能力放量</span></div>
       <div class="sc-bd">
-        <ul>
-          <li>短视频/九图素材 <b>内容场景强调送礼</b></li>
-          <li>小店直购链路 — 朋友圈增加<b>文字链</b></li>
-          <li>文案选择：送朋友 / 送妈妈 / 送长辈 / 送给ta / 惊喜直达</li>
-        </ul>
-        <div class="gift-note">📋 配置入口：广告创编 → 文字链 → 新建文字链</div>
-        <div class="gift-imgs">
-          <img src="粽子素材/送礼物icon.png" alt="送礼物文字链配置">
+        <div class="gift-layout">
+          <div class="gift-text">
+            <ul>
+              <li>短视频/九图素材 <b>内容场景强调送礼</b></li>
+              <li>小店直购链路 — 朋友圈增加<b>文字链</b></li>
+              <li>文案选择：送朋友 / 送妈妈 / 送长辈 / 送给ta / 惊喜直达</li>
+            </ul>
+            <div class="gift-note">📋 配置入口：广告创编 → 文字链 → 新建文字链</div>
+          </div>
+          <div class="gift-img">
+            <img src="粽子素材/送礼物icon.png" alt="送礼物文字链配置">
+          </div>
         </div>
       </div>
     </div>
