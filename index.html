@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>端午粽子品类备战指南</title>
+<style>
+:root {
+  --primary: #1E40AF;
+  --primary-light: #2563EB;
+  --primary-bg: #EFF6FF;
+  --accent: #DC2626;
+  --accent-bg: #FEF2F2;
+  --success: #16A34A;
+  --success-bg: #F0FDF4;
+  --gold: #F59E0B;
+  --gold-bg: #FFFBEB;
+  --text-primary: #1E293B;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+  --bg-page: #F0F4F8;
+  --bg-card: #FFFFFF;
+  --border: #E2E8F0;
+  --purple: #7C3AED;
+  --purple-bg: #F5F3FF;
+  --orange: #EA580C;
+  --orange-bg: #FFF7ED;
+}
+[data-theme="brown"]{--primary:#8B6914;--primary-light:#A67C00;--primary-bg:#FDF8EF;--accent:#C2410C;--accent-bg:#FFF7ED;--success:#15803D;--success-bg:#F0FDF4;--gold:#D97706;--gold-bg:#FFFBEB}
+[data-theme="green"]{--primary:#166534;--primary-light:#15803D;--primary-bg:#F0FDF4;--accent:#B91C1C;--accent-bg:#FEF2F2;--success:#0F766E;--success-bg:#F0FDFA;--gold:#CA8A04;--gold-bg:#FEFCE8}
+[data-theme="red"]{--primary:#DC2626;--primary-light:#EF4444;--primary-bg:#FEF2F2;--accent:#B91C1C;--accent-bg:#FEE2E2;--success:#15803D;--success-bg:#F0FDF4;--gold:#D97706;--gold-bg:#FFFBEB}
+[data-theme="purple"]{--primary:#7C3AED;--primary-light:#8B5CF6;--primary-bg:#F5F3FF;--accent:#DC2626;--accent-bg:#FEF2F2;--success:#059669;--success-bg:#ECFDF5;--gold:#D97706;--gold-bg:#FFFBEB}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:var(--bg-page);color:var(--text-primary);line-height:1.5}
+.snapshot{max-width:1200px;margin:20px auto;background:#fff;outline:none}
+
+/* ===== Brand Bar ===== */
+.brand-bar{background:var(--primary);color:#fff;padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
+.brand-bar .scene-tag{background:var(--accent);color:#fff;font-size:13px;font-weight:700;padding:3px 12px;border-radius:4px;margin-right:12px;white-space:nowrap}
+.brand-bar h1{font-size:21px;font-weight:800;letter-spacing:.5px;flex:1}
+.brand-bar .brand-right{font-size:12px;opacity:.85;text-align:right;white-space:nowrap}
+
+/* ===== Tags ===== */
+.tags-row{display:flex;gap:8px;padding:10px 32px;background:var(--primary-bg);flex-wrap:wrap;align-items:center}
+.tag{display:inline-block;padding:3px 12px;border-radius:4px;font-size:12px;font-weight:600}
+.tag-blue{background:var(--primary);color:#fff}
+.tag-outline{border:1.5px solid var(--primary);color:var(--primary);background:transparent}
+
+/* ===== KPI Strip ===== */
+.kpi-strip{display:flex;justify-content:space-around;padding:14px 24px;background:#fff;border-bottom:2px solid var(--border)}
+.kpi-item{text-align:center;flex:1}
+.kpi-value{font-size:26px;font-weight:800;color:var(--accent);line-height:1.2}
+.kpi-label{font-size:11px;color:var(--text-muted);margin-top:2px}
+
+/* ===== 3-Col ===== */
+.main-3col{display:grid;grid-template-columns:270px 1fr 270px;gap:0}
+
+/* --- Column Headers --- */
+.col-header{padding:10px 14px;text-align:center;font-size:15px;font-weight:800;color:#fff;display:flex;align-items:center;justify-content:center;gap:6px}
+.col-header-red{background:var(--accent)}
+.col-header-blue{background:var(--primary)}
+.col-header-green{background:var(--success)}
+.col-header .ch-num{font-size:20px;font-weight:900;opacity:.6}
+
+/* --- Left --- */
+.col-left{padding:16px 14px;border-right:1.5px solid var(--border)}
+.flavor-section{margin-bottom:14px}
+.flavor-title{font-size:14px;font-weight:800;padding:6px 10px;border-radius:6px;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.flavor-title-salty{background:#FFF7ED;color:#9A3412;border-left:3px solid #EA580C}
+.flavor-title-sweet{background:#FDF4FF;color:#86198F;border-left:3px solid #A855F7}
+.flavor-item{padding:6px 10px;margin-bottom:6px;border-radius:6px;border:1px solid var(--border);background:#FAFBFC}
+.flavor-item .fi-name{font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:2px}
+.flavor-item .fi-desc{font-size:11px;color:var(--text-secondary);line-height:1.5}
+.fi-tag{display:inline-block;font-size:10px;font-weight:600;padding:1px 6px;border-radius:3px;margin-right:4px}
+.fi-tag-hot{background:#FEE2E2;color:#991B1B}
+.fi-tag-new{background:#DBEAFE;color:#1E40AF}
+.fi-tag-roi{background:#D1FAE5;color:#065F46}
+.insight-block{margin-bottom:12px}
+.insight-block h4{font-size:13px;font-weight:700;color:var(--primary-light);margin-bottom:4px}
+.insight-block p,.insight-block li{font-size:11px;color:var(--text-secondary);line-height:1.6}
+.insight-block ul{padding-left:14px}
+.insight-block li{margin-bottom:2px}
+.section-title-sm{font-size:13px;font-weight:800;color:var(--text-primary);margin-bottom:6px;margin-top:12px;padding-bottom:4px;border-bottom:1.5px solid var(--border)}
+
+/* --- Middle --- */
+.col-mid{padding:16px 16px}
+.content-type{margin-bottom:16px}
+.content-type-header{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.ct-number{width:22px;height:22px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0}
+.ct-title{font-size:14px;font-weight:800;color:var(--text-primary)}
+.video-card{display:flex;gap:10px;background:#FAFBFC;border-radius:8px;padding:10px;border:1px solid var(--border)}
+.video-thumb-col{display:flex;flex-direction:column;gap:3px;flex-shrink:0;width:120px}
+.video-thumb-col video{width:120px;height:148px;border-radius:6px;object-fit:cover;background:#000}
+.thumb-row{display:flex;gap:3px}
+.thumb-row img{width:38px;height:50px;border-radius:3px;object-fit:cover}
+.video-info{flex:1;min-width:0}
+.video-info .vi-label{font-size:10px;color:var(--text-muted);margin-bottom:4px}
+.script-strip{margin-bottom:6px}
+.script-strip .ss-title{font-size:10px;font-weight:700;color:var(--text-muted);margin-bottom:3px}
+.ss-steps{display:flex;flex-wrap:wrap;gap:3px;align-items:center}
+.ss-step{font-size:10px;padding:2px 7px;border-radius:3px;font-weight:600}
+.ss-step-1{background:var(--accent-bg);color:var(--accent)}
+.ss-step-2{background:var(--primary-bg);color:var(--primary)}
+.ss-step-3{background:var(--success-bg);color:var(--success)}
+.ss-step-4{background:var(--gold-bg);color:#92400E}
+.ss-arrow{font-size:10px;color:var(--text-muted)}
+.video-info ul{font-size:11px;color:var(--text-secondary);padding-left:14px;margin-top:4px}
+.video-info ul li{margin-bottom:1px;line-height:1.5}
+.mini-metrics{display:flex;gap:6px;margin-top:6px;padding-top:5px;border-top:1px dashed var(--border)}
+.mini-metric{text-align:center;flex:1;padding:2px 4px}
+.mini-metric .mm-v{font-size:11px;font-weight:700;color:var(--text-secondary)}
+.mini-metric .mm-l{font-size:9px;color:var(--text-muted)}
+.insight-box{background:var(--gold-bg);border:1.5px solid var(--gold);border-radius:8px;padding:10px 14px;margin-top:10px}
+.insight-box h4{font-size:13px;font-weight:800;color:#92400E;margin-bottom:6px}
+.insight-box li{font-size:11px;color:#78350F;line-height:1.6;margin-bottom:2px}
+.insight-box .summary{font-size:11px;font-weight:700;color:var(--accent);margin-top:6px;padding-top:6px;border-top:1px dashed var(--gold)}
+
+/* --- Right --- */
+.col-right{padding:16px 14px;border-left:1.5px solid var(--border)}
+.strategy-card{margin-bottom:10px;border-radius:8px;overflow:hidden;border:1.5px solid var(--border)}
+.strategy-header{padding:6px 10px;display:flex;align-items:center;gap:6px}
+.strategy-header.h-red{background:var(--accent-bg)}
+.strategy-header.h-blue{background:var(--primary-bg)}
+.strategy-header.h-green{background:var(--success-bg)}
+.sh-badge{font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;color:#fff}
+.sh-badge-red{background:var(--accent)}
+.sh-badge-blue{background:var(--primary)}
+.sh-badge-green{background:var(--success)}
+.sh-title{font-size:13px;font-weight:800}
+.sh-title-red{color:var(--accent)}
+.sh-title-blue{color:var(--primary)}
+.sh-title-green{color:var(--success)}
+.strategy-body{padding:8px 10px;background:#fff}
+.strategy-body p,.strategy-body li{font-size:11px;color:var(--text-secondary);line-height:1.55}
+.strategy-body ul{padding-left:14px;margin-top:3px}
+.strategy-body li{margin-bottom:2px}
+.strategy-body .highlight{font-weight:700;color:var(--primary)}
+.sub-badge{display:inline-block;font-size:10px;font-weight:700;padding:1px 6px;border-radius:3px;color:#fff;margin-right:4px}
+.sub-badge-red{background:var(--accent)}
+.sub-badge-blue{background:var(--primary-light)}
+.sub-badge-green{background:var(--success)}
+.advance-box{background:var(--primary-bg);border-radius:6px;padding:7px 9px;margin-top:6px}
+.advance-box h5{font-size:11px;font-weight:700;color:var(--primary);margin-bottom:3px}
+.advance-box li{font-size:10px}
+
+/* Timeline */
+.timeline-box{margin-top:10px;border:1.5px solid var(--gold);border-radius:8px;overflow:hidden}
+.timeline-header{background:var(--gold);color:#fff;font-size:12px;font-weight:700;padding:5px 10px;text-align:center}
+.timeline-body{padding:10px 10px}
+.tl-item{display:flex;gap:8px;margin-bottom:8px;align-items:flex-start}
+.tl-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:3px}
+.tl-dot-gold{background:var(--gold)}
+.tl-dot-blue{background:var(--primary)}
+.tl-dot-red{background:var(--accent)}
+.tl-content{flex:1}
+.tl-date{font-size:12px;font-weight:700;color:var(--text-primary)}
+.tl-desc{font-size:10px;color:var(--text-secondary);line-height:1.5}
+
+/* Footer */
+.page-footer{background:var(--primary);color:rgba(255,255,255,.7);padding:10px 32px;font-size:11px;display:flex;justify-content:space-between}
+.page-footer span{opacity:.8}
+
+/* Theme Switcher */
+#theme-switcher{position:fixed;top:24px;right:24px;z-index:9999;display:flex;gap:6px;background:#fff;padding:6px 10px;border-radius:20px;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+#theme-switcher button{width:22px;height:22px;border-radius:50%;border:2px solid transparent;cursor:pointer;transition:transform .15s}
+#theme-switcher button:hover{transform:scale(1.2)}
+#theme-switcher button.active{border-color:#1E293B}
+@media print{#theme-switcher,#saveBtn{display:none!important}.snapshot{margin:0}}
+</style>
+</head>
+<body>
+
+<div id="theme-switcher">
+  <button data-theme="blue" title="深蓝专业" style="background:#1E40AF" class="active"></button>
+  <button data-theme="brown" title="棕金品质" style="background:#8B6914"></button>
+  <button data-theme="green" title="墨绿生态" style="background:#166534"></button>
+  <button data-theme="red" title="中国红" style="background:#DC2626"></button>
+  <button data-theme="purple" title="科技紫" style="background:#7C3AED"></button>
+</div>
+
+<div class="snapshot">
+
+  <!-- ===== Brand Bar ===== -->
+  <div class="brand-bar">
+    <span class="scene-tag">端午备战</span>
+    <h1>粽子品类消耗飙涨148% · 备好品、备好内容、备好投放，抢占端午确定性增量</h1>
+    <div class="brand-right">腾讯广告 ✦ 粮油调味速食行业</div>
+  </div>
+
+  <!-- Tags -->
+  <div class="tags-row">
+    <span class="tag tag-blue">嘉兴产业带</span>
+    <span class="tag tag-outline">咸口经典粽</span>
+    <span class="tag tag-outline">甜口新中式</span>
+    <span class="tag tag-outline">家庭餐桌场景</span>
+    <span class="tag tag-outline">视频号人群</span>
+  </div>
+
+  <!-- KPI Strip -->
+  <div class="kpi-strip">
+    <div class="kpi-item">
+      <div class="kpi-value">148%↑</div>
+      <div class="kpi-label">品类消耗环比飙涨</div>
+    </div>
+    <div class="kpi-item">
+      <div class="kpi-value">ROI 2-3</div>
+      <div class="kpi-label">品类综合投产比</div>
+    </div>
+    <div class="kpi-item">
+      <div class="kpi-value">5%+</div>
+      <div class="kpi-label">平均点击率</div>
+    </div>
+    <div class="kpi-item">
+      <div class="kpi-value">7%+</div>
+      <div class="kpi-label">平均转化率</div>
+    </div>
+    <div class="kpi-item">
+      <div class="kpi-value">5.10</div>
+      <div class="kpi-label">关键放量日</div>
+    </div>
+  </div>
+
+  <!-- ===== 3-Column Headers ===== -->
+  <div style="display:grid;grid-template-columns:270px 1fr 270px;gap:0">
+    <div class="col-header col-header-red"><span class="ch-num">①</span> 备好你的品</div>
+    <div class="col-header col-header-blue"><span class="ch-num">②</span> 备好你的内容</div>
+    <div class="col-header col-header-green"><span class="ch-num">③</span> 备好你的投放</div>
+  </div>
+
+  <!-- ===== 3-Column Body ===== -->
+  <div class="main-3col">
+
+    <!-- ========== 左栏：备好你的品 ========== -->
+    <div class="col-left">
+
+      <div class="insight-block">
+        <h4>🎯 视频号 = 粽子天然主场</h4>
+        <ul>
+          <li><b>中老年家庭用户</b> — 视频号核心消费力，端午送礼+自食双驱动</li>
+          <li><b>产地信任感强</b> — 嘉兴粽子、潮汕粽子等产地IP天然高转化</li>
+          <li><b>"买4送4"大促货组</b> — 客单35-55元，精准命中家庭决策</li>
+        </ul>
+      </div>
+
+      <!-- 咸口 -->
+      <div class="flavor-section">
+        <div class="flavor-title flavor-title-salty">🧂 咸口粽 · 经典爆款</div>
+
+        <div class="flavor-item">
+          <div class="fi-name">
+            <span class="fi-tag fi-tag-hot">消耗TOP1</span>
+            蛋黄鲜肉粽
+          </div>
+          <div class="fi-desc">嘉兴风味150-250g大粽子，蛋黄+五花肉经典组合。"买4送4"是主力货组，复购率高</div>
+        </div>
+
+        <div class="flavor-item">
+          <div class="fi-name">
+            <span class="fi-tag fi-tag-roi">高ROI</span>
+            五花鲜肉粽
+          </div>
+          <div class="fi-desc">非遗手工粽、门店现包现发冷链直达。匠心故事强化信任，ROI表现突出</div>
+        </div>
+
+        <div class="flavor-item">
+          <div class="fi-name">霸王粽 / 全家福组合</div>
+          <div class="fi-desc">加肉加蛋超大份量，梅干菜/板栗/腊肠多口味搭配，适合家庭分享场景</div>
+        </div>
+      </div>
+
+      <!-- 甜口 -->
+      <div class="flavor-section">
+        <div class="flavor-title flavor-title-sweet">🍬 甜口粽 · 新中式差异化</div>
+
+        <div class="flavor-item">
+          <div class="fi-name">
+            <span class="fi-tag fi-tag-new">新品类</span>
+            榴莲冰粽
+          </div>
+          <div class="fi-desc">冰品+端午元素，年轻化差异打法。品牌客户已验证可行，ROI 2.5-3.5</div>
+        </div>
+
+        <div class="flavor-item">
+          <div class="fi-name">豆沙 / 蜜枣粽</div>
+          <div class="fi-desc">经典甜口，适合北方市场偏好。客单略低，适合走量</div>
+        </div>
+      </div>
+
+      <div class="section-title-sm">💡 选品建议</div>
+      <div class="insight-block" style="margin-bottom:0">
+        <ul>
+          <li>咸口粽是绝对主力，建议<b>重仓蛋黄肉粽</b></li>
+          <li>甜口粽做<b>差异化补充</b>，特别是榴莲冰粽等新品类天然吸睛</li>
+          <li>"买4送4""到手8只"等<b>大促货组</b>转化率显著更高</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- ========== 中栏：备好你的内容 ========== -->
+    <div class="col-mid">
+
+      <!-- 类型1：食欲实拍 -->
+      <div class="content-type">
+        <div class="content-type-header">
+          <div class="ct-number">1</div>
+          <div class="ct-title">食欲实拍 · 视觉冲击促成下单</div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb-col">
+            <video controls preload="metadata">
+              <source src="粽子素材/蛋黄肉粽_品同TOP1.mp4" type="video/mp4">
+            </video>
+            <div class="thumb-row">
+              <img src="粽子素材/品同TOP1_1s.jpg" alt="">
+              <img src="粽子素材/品同TOP1_12s.jpg" alt="">
+              <img src="粽子素材/品同TOP1_20s.jpg" alt="">
+            </div>
+          </div>
+          <div class="video-info">
+            <div class="vi-label">蛋黄鲜肉粽 · 嘉兴风味</div>
+            <div class="script-strip">
+              <div class="ss-title">📝 脚本框架</div>
+              <div class="ss-steps">
+                <span class="ss-step ss-step-1">🔥 整箱粽子排列展示</span>
+                <span class="ss-arrow">→</span>
+                <span class="ss-step ss-step-2">剥开粽叶露馅料</span>
+                <span class="ss-arrow">→</span>
+                <span class="ss-step ss-step-3">掰开粽子蛋黄特写</span>
+                <span class="ss-arrow">→</span>
+                <span class="ss-step ss-step-4">大口试吃+价格锚点</span>
+              </div>
+            </div>
+            <ul>
+              <li><b>场景：</b>家庭餐桌 / 厨房实拍</li>
+              <li><b>卖点：</b>"到手8个2斤4两""买4送4"</li>
+              <li><b>钩子：</b>"限量冲销量" → 紧迫感促成下单</li>
+              <li><b>核心手法：</b>食欲特写画面让用户"看饿了"</li>
+            </ul>
+            <div class="mini-metrics">
+              <div class="mini-metric"><div class="mm-v">CTR 5%+</div><div class="mm-l">点击率</div></div>
+              <div class="mini-metric"><div class="mm-v">CVR 10-12%</div><div class="mm-l">转化率</div></div>
+              <div class="mini-metric"><div class="mm-v">ROI 2-2.5</div><div class="mm-l">投产比</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 类型2：匠人实拍 -->
+      <div class="content-type">
+        <div class="content-type-header">
+          <div class="ct-number">2</div>
+          <div class="ct-title">匠人实拍 · 信任背书驱动转化</div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb-col">
+            <video controls preload="metadata">
+              <source src="粽子素材/蛋黄肉粽_丹午高ROI.mp4" type="video/mp4">
+            </video>
+            <div class="thumb-row">
+              <img src="粽子素材/丹午_1s.jpg" alt="">
+              <img src="粽子素材/丹午_12s.jpg" alt="">
+              <img src="粽子素材/丹午_20s.jpg" alt="">
+            </div>
+          </div>
+          <div class="video-info">
+            <div class="vi-label">嘉兴非遗手工粽 · 门店现包冷链直达</div>
+            <div class="script-strip">
+              <div class="ss-title">📝 脚本框架</div>
+              <div class="ss-steps">
+                <span class="ss-step ss-step-1">排队实景 · "20年老店"</span>
+                <span class="ss-arrow">→</span>
+                <span class="ss-step ss-step-2">车间师傅手工包粽</span>
+                <span class="ss-arrow">→</span>
+                <span class="ss-step ss-step-3">厚切五花肉馅料特写</span>
+                <span class="ss-arrow">→</span>
+                <span class="ss-step ss-step-4">顾客试吃好评</span>
+              </div>
+            </div>
+            <ul>
+              <li><b>人设：</b>产地匠人/老板娘亲自出镜</li>
+              <li><b>卖点：</b>"不真空、无库存、食材新鲜"</li>
+              <li><b>钩子：</b>"嘉兴最任性老板" → 人格化信任</li>
+              <li><b>核心手法：</b>产地实景+匠心叙事 → 中老年天然信任</li>
+            </ul>
+            <div class="mini-metrics">
+              <div class="mini-metric"><div class="mm-v">CTR 4-5%</div><div class="mm-l">点击率</div></div>
+              <div class="mini-metric"><div class="mm-v">CVR 5-6%</div><div class="mm-l">转化率</div></div>
+              <div class="mini-metric"><div class="mm-v">ROI 3-3.5</div><div class="mm-l">投产比</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 类型3：新中式 -->
+      <div class="content-type">
+        <div class="content-type-header">
+          <div class="ct-number">3</div>
+          <div class="ct-title">新中式种草 · 差异化品类突围</div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumb-col">
+            <video controls preload="metadata">
+              <source src="粽子素材/榴莲冰粽_榴芒一刻高CTR.mp4" type="video/mp4">
+            </video>
+            <div class="thumb-row">
+              <img src="粽子素材/榴芒TOP1_5s.jpg" alt="">
+              <img src="粽子素材/榴芒TOP1_12s.jpg" alt="">
+              <img src="粽子素材/榴芒TOP1_20s.jpg" alt="">
+            </div>
+          </div>
+          <div class="video-info">
+            <div class="vi-label">榴莲冰粽 · 冰品+端午跨界新物种</div>
+            <div class="script-strip">
+              <div class="ss-title">📝 脚本框架</div>
+              <div class="ss-steps">
+                <span class="ss-step ss-step-1">精致KOL开箱展示</span>
+                <span class="ss-arrow">→</span>
+                <span class="ss-step ss-step-2">爆浆馅料咬开特写</span>
+                <span class="ss-arrow">→</span>
+                <span class="ss-step ss-step-3">"丝滑绵密"口感描述</span>
+                <span class="ss-arrow">→</span>
+                <span class="ss-step ss-step-4">优惠券钩子促成下单</span>
+              </div>
+            </div>
+            <ul>
+              <li><b>人设：</b>精致女性KOL / 家庭场景</li>
+              <li><b>卖点：</b>冰品+端午+榴莲，三重新鲜感</li>
+              <li><b>钩子：</b>"榴莲冰淇淋自由" → 年轻化心智</li>
+              <li><b>核心手法：</b>差异化品类在传统竞争中更容易抢眼</li>
+            </ul>
+            <div class="mini-metrics">
+              <div class="mini-metric"><div class="mm-v">CTR 8%+</div><div class="mm-l">点击率</div></div>
+              <div class="mini-metric"><div class="mm-v">CVR 2-3%</div><div class="mm-l">转化率</div></div>
+              <div class="mini-metric"><div class="mm-v">ROI 2.5-3.5</div><div class="mm-l">投产比</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 核心洞察 -->
+      <div class="insight-box">
+        <h4>🔥 内容核心洞察</h4>
+        <ol style="padding-left:18px">
+          <li><b>食欲特写是王道</b> — 掰开粽子露馅料的特写画面，转化率 10%+</li>
+          <li><b>匠人故事加持ROI</b> — 非遗传承+门店实拍，ROI 3+，中老年最买账</li>
+          <li><b>新品类天然吸睛</b> — 榴莲冰粽 CTR 8%+，差异化品类更容易抢眼</li>
+        </ol>
+        <div class="summary">💡 三种素材交叉组合投放效果最佳：食欲实拍冲转化 + 匠人故事冲ROI + 新品类抢点击</div>
+      </div>
+
+    </div>
+
+    <!-- ========== 右栏：备好你的投放 ========== -->
+    <div class="col-right">
+
+      <!-- 时间线 -->
+      <div class="timeline-box">
+        <div class="timeline-header">⏰ 端午备战时间线</div>
+        <div class="timeline-body">
+          <div class="tl-item">
+            <div class="tl-dot tl-dot-gold"></div>
+            <div class="tl-content">
+              <div class="tl-date">现在 → 5月10日前</div>
+              <div class="tl-desc">🔥 <b>账户预热期</b><br>开通全域通 + 小店全店托管<br>完成账户冷启动和素材储备</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot tl-dot-red"></div>
+            <div class="tl-content">
+              <div class="tl-date">5月10日 → 端午当日</div>
+              <div class="tl-desc">🚀 <b>大规模放量期</b><br>端午前3天是关键放量窗口<br>去年消耗峰值 = 端午前两周</div>
+            </div>
+          </div>
+          <div class="tl-item" style="margin-bottom:0">
+            <div class="tl-dot tl-dot-blue"></div>
+            <div class="tl-content">
+              <div class="tl-date">端午后一周</div>
+              <div class="tl-desc">📊 <b>长尾收割</b><br>节后仍有回购需求<br>利用已验证素材持续投放</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 策略一 -->
+      <div class="strategy-card">
+        <div class="strategy-header h-red">
+          <span class="sh-badge sh-badge-red">预热</span>
+          <span class="sh-title sh-title-red">全域通 + 全店托管破冰</span>
+        </div>
+        <div class="strategy-body">
+          <ul>
+            <li><b>全域通直播</b>：先跑通账户模型，积累转化数据</li>
+            <li><b>小店全店托管</b>：零门槛开通，自动探索流量</li>
+            <li>目标：5月10日前完成冷启动，确保<b>账户有数据基础</b></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 策略二 -->
+      <div class="strategy-card">
+        <div class="strategy-header h-blue">
+          <span class="sh-badge sh-badge-blue">放量</span>
+          <span class="sh-title sh-title-blue">ADQ多链路规模投放</span>
+        </div>
+        <div class="strategy-body">
+          <ul>
+            <li>首选 <span class="highlight">「下单ROI」</span> 优化目标</li>
+            <li>智投 + 非智投 <b>基建对齐</b>，最大化拿量</li>
+            <li>直播 + 小店 <b>双链路并行</b>，24h持续转化</li>
+          </ul>
+          <div class="advance-box">
+            <h5>📈 放量技巧</h5>
+            <ul>
+              <li>AIGC妙思托管 → 自动衍生差异化创意</li>
+              <li>多OG并行 → 增加创意唯一性数量</li>
+              <li>视频号广告每日 <b>10:00前</b> 创建</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 策略三 -->
+      <div class="strategy-card">
+        <div class="strategy-header h-green">
+          <span class="sh-badge sh-badge-green">增量</span>
+          <span class="sh-title sh-title-green">小店短视频挂车直投</span>
+        </div>
+        <div class="strategy-body">
+          <ul>
+            <li>短视频挂车 <b>24h持续转化</b>，与直播间互补</li>
+            <li>小店消耗占比仅15%，<span class="highlight">增量空间极大</span></li>
+            <li>素材可复用，<b>边际成本低</b></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-title-sm" style="margin-top:10px">📋 商家行动清单</div>
+      <div class="insight-block" style="margin-bottom:0">
+        <ul>
+          <li>✅ 选好爆款粽子品（蛋黄肉粽+差异化品）</li>
+          <li>✅ 准备3-5条食欲实拍 / 匠人故事素材</li>
+          <li>✅ 5月10日前完成全域通+小店托管开通</li>
+          <li>✅ 5月10日起大规模投放，抢占流量高峰</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div><!-- /main-3col -->
+
+  <!-- Footer -->
+  <div class="page-footer">
+    <span>端午粽子品类 · 天然适配视频号家庭消费人群 · 食欲特写冲转化 × 匠心故事冲ROI × 新品类抢点击 · 提前备战抢占确定性增量</span>
+    <span>腾讯广告 ✦ 粮油调味速食行业</span>
+  </div>
+
+</div><!-- /snapshot -->
+
+<script>
+(function(){
+  var themes={blue:{'--primary':'#1E40AF','--primary-light':'#2563EB','--primary-bg':'#EFF6FF','--accent':'#DC2626','--accent-bg':'#FEF2F2','--success':'#16A34A','--success-bg':'#F0FDF4','--gold':'#F59E0B','--gold-bg':'#FFFBEB'},brown:{'--primary':'#8B6914','--primary-light':'#A67C00','--primary-bg':'#FDF8EF','--accent':'#C2410C','--accent-bg':'#FFF7ED','--success':'#15803D','--success-bg':'#F0FDF4','--gold':'#D97706','--gold-bg':'#FFFBEB'},green:{'--primary':'#166534','--primary-light':'#15803D','--primary-bg':'#F0FDF4','--accent':'#B91C1C','--accent-bg':'#FEF2F2','--success':'#0F766E','--success-bg':'#F0FDFA','--gold':'#CA8A04','--gold-bg':'#FEFCE8'},red:{'--primary':'#DC2626','--primary-light':'#EF4444','--primary-bg':'#FEF2F2','--accent':'#B91C1C','--accent-bg':'#FEE2E2','--success':'#15803D','--success-bg':'#F0FDF4','--gold':'#D97706','--gold-bg':'#FFFBEB'},purple:{'--primary':'#7C3AED','--primary-light':'#8B5CF6','--primary-bg':'#F5F3FF','--accent':'#DC2626','--accent-bg':'#FEF2F2','--success':'#059669','--success-bg':'#ECFDF5','--gold':'#D97706','--gold-bg':'#FFFBEB'}};
+  document.querySelectorAll('#theme-switcher button').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var t=this.dataset.theme,vars=themes[t];if(!vars)return;
+      var root=document.documentElement;
+      Object.keys(vars).forEach(function(k){root.style.setProperty(k,vars[k])});
+      document.querySelectorAll('#theme-switcher button').forEach(function(b){b.classList.remove('active')});
+      this.classList.add('active');
+    });
+  });
+})();
+(function(){
+  var snapshot=document.querySelector('.snapshot');
+  if(snapshot)snapshot.setAttribute('contenteditable','true');
+  var cdns=['https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js','https://unpkg.com/html2canvas@1.4.1/dist/html2canvas.min.js','https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'];
+  function loadScript(url){return new Promise(function(resolve,reject){var s=document.createElement('script');s.src=url;s.onload=resolve;s.onerror=reject;document.head.appendChild(s)})}
+  async function loadH2C(){for(var i=0;i<cdns.length;i++){try{await loadScript(cdns[i]);if(typeof html2canvas!=='undefined')return true}catch(e){}}return false}
+  loadH2C();
+  var btn=document.createElement('button');
+  btn.id='saveBtn';btn.textContent='📸 导出4K图片';
+  btn.style.cssText='position:fixed;bottom:24px;right:24px;z-index:9999;padding:12px 24px;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(37,99,235,.4);transition:transform .2s';
+  btn.onmouseover=function(){this.style.transform='scale(1.05)'};
+  btn.onmouseout=function(){this.style.transform='scale(1)'};
+  document.body.appendChild(btn);
+  btn.addEventListener('click',async function(){
+    var origText=btn.textContent;btn.textContent='⏳ 生成中...';btn.style.pointerEvents='none';
+    try{
+      var waited=0;while(typeof html2canvas==='undefined'&&waited<10000){await new Promise(function(r){setTimeout(r,200)});waited+=200}
+      if(typeof html2canvas==='undefined')throw new Error('html2canvas 加载失败');
+      btn.style.display='none';var switcher=document.getElementById('theme-switcher');if(switcher)switcher.style.display='none';
+      var el=document.querySelector('.snapshot');
+      var canvas=await html2canvas(el,{scale:3,useCORS:true,backgroundColor:'#ffffff',logging:false});
+      var link=document.createElement('a');link.download=(document.title||'snapshot').replace(/[^\w\u4e00-\u9fa5]/g,'_')+'_4K.png';link.href=canvas.toDataURL('image/png');link.click();
+      btn.style.display='';if(switcher)switcher.style.display='';btn.textContent='✅ 已保存';setTimeout(function(){btn.textContent='📸 导出4K图片'},2000);
+    }catch(e){btn.style.display='';var switcher=document.getElementById('theme-switcher');if(switcher)switcher.style.display='';btn.textContent='❌ '+(e.message||'失败');setTimeout(function(){btn.textContent='📸 导出4K图片'},3000)}
+    btn.style.pointerEvents='';
+  });
+})();
+</script>
+
+</body>
+</html>
