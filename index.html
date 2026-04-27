@@ -66,11 +66,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei
 .vid-num.vn-blue{background:var(--pri)}
 .vid-num.vn-green{background:var(--ok)}
 .vid-label{font-size:10px;font-weight:800}
-.vid-bd{padding:6px;display:flex;gap:5px;align-items:flex-start}
-.vid-bd video{width:110px;flex-shrink:0;aspect-ratio:9/16;border-radius:4px;object-fit:cover;background:#000}
-.vid-info{flex:1;min-width:0;font-size:8.5px;color:var(--t2);line-height:1.4}
+.vid-bd{padding:6px}
+.vid-vids{display:flex;gap:4px;margin-bottom:4px;justify-content:center}
+.vid-vids video{max-height:220px;aspect-ratio:9/16;border-radius:4px;object-fit:cover;background:#000;flex-shrink:0}
+.vid-info{font-size:8.5px;color:var(--t2);line-height:1.4}
 .vid-info b{color:var(--t1)}
-.vid-metrics{display:flex;gap:2px;margin-top:4px}
+.vid-metrics{display:flex;gap:2px;margin-top:3px}
 .vm{text-align:center;flex:1;padding:2px 0;background:#fff;border-radius:2px;border:1px solid var(--bd)}
 .vm .v{font-size:9px;font-weight:800;color:var(--pri)}
 .vm .l{font-size:6px;color:var(--t3)}
@@ -182,11 +183,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei
       <div class="vid-item">
         <div class="vid-hd vh-red"><div class="vid-num vn-red">1</div><div class="vid-label">食欲实拍 · 冲转化</div></div>
         <div class="vid-bd">
-          <video controls preload="metadata" poster="粽子素材/蛋黄肉粽_品同TOP1_8s.jpg"><source src="粽子素材/蛋黄肉粽_品同TOP1.mp4" type="video/mp4"></video>
-          <video controls preload="metadata" poster="粽子素材/蛋黄肉粽_品同TOP2_8s.jpg"><source src="粽子素材/蛋黄肉粽_品同TOP2.mp4" type="video/mp4"></video>
+          <div class="vid-vids">
+            <video controls preload="metadata" poster="粽子素材/蛋黄肉粽_品同TOP1_8s.jpg"><source src="粽子素材/蛋黄肉粽_品同TOP1.mp4" type="video/mp4"></video>
+            <video controls preload="metadata" poster="粽子素材/蛋黄肉粽_品同TOP2_8s.jpg"><source src="粽子素材/蛋黄肉粽_品同TOP2.mp4" type="video/mp4"></video>
+          </div>
           <div class="vid-info">
-            <b>脚本：</b>整箱展示→剥粽叶→蛋黄肉馅特写→试吃+价格<br>
-            <b>核心：</b>食欲特写让用户"看饿了"，直接冲转化
+            <b>脚本：</b>整箱展示→剥粽叶→蛋黄肉馅特写→试吃+价格　<b>核心：</b>食欲特写冲转化
             <div class="vid-metrics">
               <div class="vm"><div class="v">5%+</div><div class="l">CTR</div></div>
               <div class="vm"><div class="v">10-12%</div><div class="l">CVR</div></div>
@@ -200,11 +202,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei
       <div class="vid-item">
         <div class="vid-hd vh-blue"><div class="vid-num vn-blue">2</div><div class="vid-label">匠人实拍 · 冲ROI</div></div>
         <div class="vid-bd">
-          <video controls preload="metadata" poster="粽子素材/蛋黄肉粽_丹午高ROI_8s.jpg"><source src="粽子素材/蛋黄肉粽_丹午高ROI.mp4" type="video/mp4"></video>
-          <video controls preload="metadata" poster="粽子素材/鲜肉粽_吴兴禾TOP1_8s.jpg"><source src="粽子素材/鲜肉粽_吴兴禾TOP1.mp4" type="video/mp4"></video>
+          <div class="vid-vids">
+            <video controls preload="metadata" poster="粽子素材/蛋黄肉粽_丹午高ROI_8s.jpg"><source src="粽子素材/蛋黄肉粽_丹午高ROI.mp4" type="video/mp4"></video>
+            <video controls preload="metadata" poster="粽子素材/鲜肉粽_吴兴禾TOP1_8s.jpg"><source src="粽子素材/鲜肉粽_吴兴禾TOP1.mp4" type="video/mp4"></video>
+          </div>
           <div class="vid-info">
-            <b>脚本：</b>工厂现包→手工包粽→馅料展示→试吃好评<br>
-            <b>核心：</b>产地实景+匠心叙事，中老年信任感强
+            <b>脚本：</b>工厂现包→手工包粽→馅料展示→试吃好评　<b>核心：</b>匠心叙事冲ROI
             <div class="vid-metrics">
               <div class="vm"><div class="v">4-5%</div><div class="l">CTR</div></div>
               <div class="vm"><div class="v">5-6%</div><div class="l">CVR</div></div>
@@ -218,10 +221,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei
       <div class="vid-item">
         <div class="vid-hd vh-green"><div class="vid-num vn-green">3</div><div class="vid-label">口碑溯源 · 建信任</div></div>
         <div class="vid-bd">
-          <video controls preload="metadata" poster="粽子素材/榴莲冰粽_新素材_8s.jpg"><source src="粽子素材/榴莲冰粽_新素材.mp4" type="video/mp4"></video>
+          <div class="vid-vids">
+            <video controls preload="metadata" poster="粽子素材/榴莲冰粽_新素材_8s.jpg"><source src="粽子素材/榴莲冰粽_新素材.mp4" type="video/mp4"></video>
+          </div>
           <div class="vid-info">
-            <b>脚本：</b>顾客好评→回头客佐证→工厂蒸煮→产地溯源<br>
-            <b>核心：</b>真实口碑+全链条溯源，完播率高
+            <b>脚本：</b>顾客好评→回头客佐证→工厂蒸煮→产地溯源　<b>核心：</b>口碑建信任
             <div class="vid-metrics">
               <div class="vm"><div class="v">4-5%</div><div class="l">CTR</div></div>
               <div class="vm"><div class="v">5-7%</div><div class="l">CVR</div></div>
