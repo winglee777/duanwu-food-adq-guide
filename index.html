@@ -118,6 +118,52 @@ body{font-family:'Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:
 
 /* Footer */
 .ft{background:var(--ink);color:rgba(255,255,255,.5);padding:10px 24px;font-size:9px;display:flex;justify-content:space-between}
+
+/* ===== 618 政策板块 ===== */
+.policy-banner{background:linear-gradient(135deg,#ff6b35 0%,#d63031 100%);color:#fff;padding:8px 20px;display:flex;align-items:center;justify-content:space-between;font-size:11px;font-weight:700;letter-spacing:.3px}
+.policy-banner .pb-left{display:flex;align-items:center;gap:8px}
+.policy-banner .pb-tag{background:#fff;color:var(--red);font-size:9px;font-weight:900;padding:2px 7px;border-radius:3px;letter-spacing:.5px}
+.policy-banner .pb-date{font-size:10px;opacity:.85;font-weight:500}
+
+.policy-sec{background:linear-gradient(180deg,#fff8f6 0%,#fff 100%);padding:14px 20px 16px;border-bottom:2px solid var(--bd)}
+.policy-hd{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.policy-hd .sec-num{background:linear-gradient(135deg,#ff6b35,#d63031)}
+.policy-hd .sec-title{font-size:14px;font-weight:900}
+.policy-hd .ph-meta{margin-left:auto;font-size:9.5px;color:var(--mute);font-weight:500}
+
+.policy-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.policy-card{background:#fff;border:1px solid #ffd9cc;border-radius:8px;padding:11px 13px;position:relative;overflow:hidden}
+.policy-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#ff6b35,#d63031)}
+.policy-card .pc-hd{display:flex;align-items:center;gap:6px;margin-bottom:7px}
+.policy-card .pc-icon{font-size:14px}
+.policy-card .pc-title{font-size:12px;font-weight:900;color:var(--ink)}
+.policy-card .pc-sub{font-size:10px;color:var(--red);font-weight:700;margin-bottom:4px}
+.policy-card .pc-list{list-style:none;padding:0;margin:0 0 6px}
+.policy-card .pc-list li{font-size:9.5px;color:var(--sub);line-height:1.55;padding:1px 0}
+.policy-card .pc-list li b{color:var(--ink);font-weight:700}
+.policy-card .pc-list li .hl{color:var(--red);font-weight:800}
+.policy-card .pc-divider{height:1px;background:var(--bd);margin:6px 0}
+.policy-card .pc-foot{font-size:9px;color:var(--sub);line-height:1.5;margin-top:4px}
+.policy-card .pc-highlight{background:#fff3ee;border-left:2.5px solid var(--red);padding:5px 8px;margin-top:6px;font-size:9.5px;font-weight:700;color:var(--ink);border-radius:0 4px 4px 0}
+.policy-card .pc-highlight .hl-icon{margin-right:3px}
+
+.policy-actions{background:#fff8f5;border:1.5px dashed #ffb89e;border-radius:8px;padding:10px 13px}
+.policy-actions .pa-hd{font-size:11px;font-weight:900;color:var(--ink);margin-bottom:6px;display:flex;align-items:center;gap:5px}
+.policy-actions .pa-hd .pa-icon{font-size:13px}
+.policy-actions .pa-hd .pa-tag{font-size:8.5px;color:var(--red);font-weight:700;background:#ffe5dc;padding:1.5px 6px;border-radius:3px;letter-spacing:.3px}
+.policy-actions ol{counter-reset:pa;list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 14px}
+.policy-actions ol li{font-size:9.5px;color:var(--sub);line-height:1.55;counter-increment:pa;padding-left:18px;position:relative}
+.policy-actions ol li::before{content:counter(pa);position:absolute;left:0;top:1px;width:13px;height:13px;border-radius:50%;background:var(--red);color:#fff;font-size:8px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.policy-actions ol li b{color:var(--red);font-weight:800}
+
+/* 折叠展开 */
+.policy-card details{margin-top:6px}
+.policy-card details summary{cursor:pointer;font-size:9px;color:var(--red);font-weight:700;list-style:none;padding:3px 0;user-select:none;display:inline-flex;align-items:center;gap:3px}
+.policy-card details summary::-webkit-details-marker{display:none}
+.policy-card details summary::after{content:'▼';font-size:7px;transition:transform .2s}
+.policy-card details[open] summary::after{transform:rotate(180deg)}
+.policy-card details .det-body{margin-top:5px;padding:7px 9px;background:#fafbfc;border-radius:5px;font-size:9px;color:var(--sub);line-height:1.6}
+.policy-card details .det-body b{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -138,6 +184,95 @@ body{font-family:'Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:
     <div class="kpi-item"><div class="kpi-val">5%+</div><div class="kpi-label">平均点击率</div></div>
     <div class="kpi-item"><div class="kpi-val">7%+</div><div class="kpi-label">平均转化率</div></div>
     <div class="kpi-item"><div class="kpi-val">6.5-6.19</div><div class="kpi-label">流量高峰窗口</div></div>
+  </div>
+</div>
+
+<!-- 618 政策红条 -->
+<div class="policy-banner">
+  <div class="pb-left">
+    <span class="pb-tag">618 必读</span>
+    <span>大促政策红利已开闸，先报名 · 后投放 · 享加权</span>
+  </div>
+  <div class="pb-date">5/22 起 · 微信小店</div>
+</div>
+
+<!-- 618 扶持政策 · 微信小店 -->
+<div class="policy-sec">
+  <div class="policy-hd">
+    <div class="sec-num">0</div>
+    <div class="sec-title">618 扶持政策 · 微信小店</div>
+    <div class="ph-meta">报名即享广告侧加权 · 商品全报名是底线动作</div>
+  </div>
+
+  <div class="policy-grid">
+    <!-- 跨店满减补贴 -->
+    <div class="policy-card">
+      <div class="pc-hd">
+        <span class="pc-icon">🎫</span>
+        <span class="pc-title">跨店满减补贴</span>
+      </div>
+      <div class="pc-sub">5档券面额（5/22 起扩充）</div>
+      <ul class="pc-list">
+        <li>满80-10 · 满160-20 · 满400-50</li>
+        <li>满1000-100 · 满2000-200</li>
+      </ul>
+      <div class="pc-divider"></div>
+      <div class="pc-sub">双模式</div>
+      <ul class="pc-list">
+        <li><b>混资</b>：平台 12.5% + 商家分摊</li>
+        <li><b>全资 K800</b>：平台 100% 出资</li>
+      </ul>
+      <div class="pc-foot">每周五自动发券·用户无需手动领取</div>
+      <div class="pc-highlight"><span class="hl-icon">⚡</span>报名即享广告侧竞争力加权 + 额外曝光</div>
+      <details>
+        <summary>查看报名建议</summary>
+        <div class="det-body">
+          ① 优先报名<b>主推品 + 高日耗品</b>，避免广告投了但商品没报名错失加权<br>
+          ② 全资 K800 模式无需商家出资，<b>新店、低毛利品类优先选</b><br>
+          ③ 混资模式补贴金额可叠加更高，<b>主推爆款建议选混资</b>
+        </div>
+      </details>
+    </div>
+
+    <!-- 直播大场激励 -->
+    <div class="policy-card">
+      <div class="pc-hd">
+        <span class="pc-icon">🎬</span>
+        <span class="pc-title">直播大场激励</span>
+      </div>
+      <div class="pc-sub">3档 GMV 返佣（叠加满减更高）</div>
+      <ul class="pc-list">
+        <li>GMV <b>30万+</b> → 基础1.5% + 叠加1.5% = <span class="hl">最高 3%</span></li>
+        <li>GMV <b>100万+</b> → 基础2% + 叠加2% = <span class="hl">最高 4%</span></li>
+        <li>GMV <b>300万+</b> → 基础2.5% + 叠加2.5% = <span class="hl">最高 5%</span></li>
+      </ul>
+      <div class="pc-divider"></div>
+      <div class="pc-foot">单日封顶 <b>20 万</b> / 活动期总封顶 <b>200 万</b><br>T+7 下发电商成长卡 · 38 天可滚动 4-5 轮</div>
+      <div class="pc-highlight"><span class="hl-icon">🎯</span>大场前 7 天起量预热，叠加返佣杠杆最大化</div>
+      <details>
+        <summary>查看冲档建议</summary>
+        <div class="det-body">
+          ① 离档位差 20% 内的，<b>大场最后 2 天加预算冲档</b><br>
+          ② 电商成长卡 38 天滚动 4-5 轮，<b>持续做大场比单场冲高更划算</b><br>
+          ③ 大场期间务必同步报名跨店满减，<b>两项叠加 ROI 提升明显</b>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- 四场景行动 -->
+  <div class="policy-actions">
+    <div class="pa-hd">
+      <span class="pa-icon">🎯</span>
+      <span>四场景行动</span>
+      <span class="pa-tag">按优先级</span>
+    </div>
+    <ol>
+      <li>已报名 + 在投放 → <b>加基建、提出价</b></li>
+      <li>主推品日耗 &gt;1000 未报名 → <b>尽快报名 618</b></li>
+      <li>有广告在投但补贴品未投放 → <b>引导补贴品切入投放</b></li>
+      <li>已报名未投放 → <b>立即开投，投放即享扶持</b></li>
+    </ol>
   </div>
 </div>
 
