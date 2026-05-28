@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>端午粽子品类备战指南</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#1a1a2e;--sub:#4a4a6a;--mute:#8888a0;
@@ -12,7 +12,7 @@
   --blue:#0652DD;--blue-bg:#e8f0fe;
   --green:#00b894;--green-bg:#e6fcf5;
   --gold:#f39c12;--gold-bg:#fef9e7;
-  --bg:#f5f6fa;--card:#fff;--bd:#e0e0e8;
+  --bg:#f6f5f2;--card:#fff;--bd:#e0e0e8;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -29,7 +29,7 @@ body{font-family:'Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:
 .kpi-bar{display:flex;gap:0;background:rgba(255,255,255,.08);border-radius:8px;overflow:hidden}
 .kpi-item{flex:1;text-align:center;padding:10px 8px;border-right:1px solid rgba(255,255,255,.08)}
 .kpi-item:last-child{border-right:none}
-.kpi-val{font-size:22px;font-weight:900;line-height:1.1}
+.kpi-val{font-size:22px;font-weight:900;line-height:1.1;font-family:'Inter',sans-serif}
 .kpi-val.accent{color:#ff6b6b}
 .kpi-label{font-size:9px;opacity:.5;margin-top:2px}
 
@@ -73,7 +73,7 @@ body{font-family:'Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:
 .vid-card .vc-script{font-size:7.5px;color:var(--mute);line-height:1.3;margin-bottom:3px}
 .vid-card .vc-metrics{display:flex;gap:2px}
 .vc-m{text-align:center;flex:1;padding:2px 0;background:#fff;border-radius:2px;border:1px solid var(--bd)}
-.vc-m .v{font-size:9px;font-weight:800;color:var(--blue)}
+.vc-m .v{font-size:9px;font-weight:800;color:var(--blue);font-family:'Inter',sans-serif}
 .vc-m .l{font-size:6px;color:var(--mute)}
 
 /* 洞察条 */
@@ -118,6 +118,14 @@ body{font-family:'Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:
 
 /* Footer */
 .ft{background:var(--ink);color:rgba(255,255,255,.5);padding:10px 24px;font-size:9px;display:flex;justify-content:space-between}
+
+/* 参考链接 */
+.ref-links{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.ref-link{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;padding:7px 12px;border-radius:6px;text-decoration:none;transition:all .2s}
+.ref-link-blue{background:var(--blue-bg);color:var(--blue);border:1px solid rgba(6,82,221,.15)}
+.ref-link-blue:hover{background:var(--blue);color:#fff}
+.ref-link-green{background:var(--green-bg);color:#0d6b52;border:1px solid rgba(0,184,148,.15)}
+.ref-link-green:hover{background:var(--green);color:#fff}
 
 /* ===== 618 政策板块 ===== */
 .policy-banner{background:linear-gradient(135deg,#ff6b35 0%,#d63031 100%);color:#fff;padding:8px 20px;display:flex;align-items:center;justify-content:space-between;font-size:11px;font-weight:700;letter-spacing:.3px}
@@ -233,6 +241,10 @@ body{font-family:'Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:
 
 /* Footer */
 .ft{font-size:11px;padding:12px 24px}
+
+/* 参考链接放大 */
+.ref-links{margin-top:12px;gap:8px}
+.ref-link{font-size:12.5px;padding:9px 14px;border-radius:7px}
 </style>
 </head>
 <body>
@@ -466,6 +478,10 @@ body{font-family:'Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:
         <li>直播+小店 <b>双链路并行</b>，24h转化</li>
         <li>AIGC妙思托管衍生创意，每条素材同时 <b>智投+非智投</b></li>
       </ul>
+      <div class="ref-links">
+        <a href="https://doc.weixin.qq.com/doc/w3_AN0ARwawACgCNrMSgvto1QbaRTUCL?scode=AJEAIQdfAAo7HH04CiAN0ARwawACg" target="_blank" class="ref-link ref-link-blue">📘 智投功能细节 →</a>
+        <a href="https://doc.weixin.qq.com/doc/w3_AaEAUgbuAPUCNjWuHgYUfSMK7aL86?scode=AJEAIQdfAAo1psaAKvAaEAUgbuAPU" target="_blank" class="ref-link ref-link-green">📗 品类投放指南（重点看第三部分）→</a>
+      </div>
     </div>
     <div class="strat-card">
       <div class="st-hd"><span class="st-badge sb-g">增量</span><span class="st-title stt-g">借势【送礼物】</span></div>
